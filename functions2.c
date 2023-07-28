@@ -1,11 +1,11 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
+/****************** FUNCTION TO PRINT POINTER ******************/
 /**
- * print_pointer - Prints the value of a pointer variable
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * print_pointer - Code to Prints the value of a pointer variable
+ * @types: Code to List type of arguments
+ * @buffer:Code to  Buffer array to handle print
+ * @flags: Code to Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -52,21 +52,22 @@ int print_pointer(va_list types, char buffer[],
 		width, flags, padd, extra_c, padd_start));
 }
 
-/************************* PRINT NON PRINTABLE *************************/
+/********FUNCTIONS TO PRINT NON PRINTABLE *****************/
 /**
- * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed
+ * print_non_printable - Code to Prints ascii codes in hexa of
+ * non printable chars
+ * @types: Code to print Lists of arguments
+ * @buffer: code to Buffer array to handle print
+ * @flags:  code to Calculates active flags
+ * @width: code to  get width
+ * @precision: code to Precision specification
+ * @size: Code to get Size specifier
+ * Return: Code to get Number of chars printed
  */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int i = 0, offset = 0;
+	int y = 0, offset = 0;
 	char *str = va_arg(types, char *);
 
 	UNUSED(flags);
@@ -77,31 +78,31 @@ int print_non_printable(va_list types, char buffer[],
 	if (str == NULL)
 		return (write(1, "(null)", 6));
 
-	while (str[i] != '\0')
+	while (str[y] != '\0')
 	{
-		if (is_printable(str[i]))
-			buffer[i + offset] = str[i];
+		if (is_printable(str[y]))
+			buffer[i + offset] = str[y];
 		else
-			offset += append_hexa_code(str[i], buffer, i + offset);
+			offset += append_hexa_code(str[y], buffer, y + offset);
 
-		i++;
+		y++;
 	}
 
-	buffer[i + offset] = '\0';
+	buffer[y + offset] = '\0';
 
-	return (write(1, buffer, i + offset));
+	return (write(1, buffer, y + offset));
 }
 
-/************************* PRINT REVERSE *************************/
+/******** FUNCTIONS TO PRINT REVERSE ***************/
 /**
- * print_reverse - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_reverse - code to Prints reverse string.
+ * @types: code to Lista of arguments
+ * @buffer: code to Buffer array to handle print
+ * @flags:  code to Calculates active flags
+ * @width: code to get width
+ * @precision: code to Precision specification
+ * @size: code to get Size specifier
+ * Return: code to get Numbers of chars printed
  */
 
 int print_reverse(va_list types, char buffer[],

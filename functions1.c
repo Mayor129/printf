@@ -2,6 +2,7 @@
 
 /********* FUNCTION TO PRINT UNSIGNED NUMBER ***************/
 /**
+<<<<<<< HEAD
  * print_unsigned - Code to print an unsigned number
  * @types: List the type of arguments
  * @buffer: Buffer is an array to handle print
@@ -10,6 +11,16 @@
  * @precision: to get Precision specification
  * @size: to get of Size specifier
  * Return: to returned the Number of chars printed.
+=======
+*print_unsigned - Prints an unsigned number
+ * @types: List a of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed.
+>>>>>>> 081ec0934658492973cb5a4123695aea1a743e83
  */
 
 int print_unsigned(va_list types, char buffer[],
